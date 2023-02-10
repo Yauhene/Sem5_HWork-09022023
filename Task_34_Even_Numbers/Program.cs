@@ -2,6 +2,29 @@
 // которая покажет количество чётных чисел в массиве.
 // [345, 897, 568, 234] -> 2
 
+
+//=====================================================================================================================
+// Функция проверяет целое число на четность, 
+// возвращает true если число четное
+
+bool EvenOrNot(int argum)
+{
+    bool even = false;
+    if (argum != 0)
+    {
+        if ((argum % 2) == 0)
+        {
+        even = true;
+       
+        }
+        else
+        {
+            even = false;
+        }
+    }
+    return even;
+} 
+
 int[] createRandArr(int size, int min, int max)
 {
     int[] arr = new int[size];
@@ -30,12 +53,26 @@ void printArr(int[] array)
 
 
 
-Console.WriteLine("Hello, World!");
+
+
+
+//Console.WriteLine("Hello, World!");
 
 
 void GeneralProgram()
 {
+    int count = 0;
     int[] myArr = createRandArr(5, 100, 999);
     printArr(myArr);
-
+    for(int i=0; i <= (myArr.Length - 1); i++)
+    {
+        if(EvenOrNot(myArr[i])) count++;
+    }
+    Console.WriteLine();
+    Console.WriteLine();
+    Console.WriteLine($"Количество четных чисел в массиве: {count}");
+    Console.WriteLine("=========================================================================");
+    Console.WriteLine();
 }
+
+GeneralProgram();
