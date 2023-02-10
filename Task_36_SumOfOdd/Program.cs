@@ -68,15 +68,21 @@ void printArr(int[] array)
 void GeneralProgram()
 {
     int count = 0;
-    int[] myArr = createRandArr(5, 100, 999);
+    int sumOfOdd = 0;
+    int[] myArr = createRandArr(5, 0, 99);
     printArr(myArr);
     for(int i=0; i <= (myArr.Length - 1); i++)
     {
-        if(EvenOrNot(myArr[i])) count++;
+        if(!EvenOrNot(myArr[i]))
+        {
+            count++;
+            sumOfOdd = sumOfOdd + myArr[i];
+        }
     }
     Console.WriteLine();
     Console.WriteLine();
-    Console.WriteLine($"Количество четных чисел в массиве: {count}");
+    Console.WriteLine($"Количество нечетных чисел в массиве: {count}");
+    Console.WriteLine($"Сумма нечетных чисел в массиве: {sumOfOdd}");
     Console.WriteLine("=========================================================================");
     Console.WriteLine();
 }
